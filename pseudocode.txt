@@ -1,0 +1,35 @@
+PRINT "--Delicious Resto Menu--"
+PRINT "1. Crispy Chicken"
+PRINT "2. Steak"
+PRINT "3. Beef Roll"
+PRINT "4. White Fish"
+
+WRITE chooseMenu
+STORE chooseMenu with number 1
+
+ADD "cart" with "food menu"[1]
+
+CALL checkout(cart)
+
+WRITE "addres" with string
+STORE "addres" with "Rungkut"
+
+WRITE "isPaid" with boolean False
+WRITE "isConfirm" with boolean False
+WRITE orderStatus with string ""
+
+IF "isPaid" equal to True THEN
+    STORE "isConfirm" with True
+    STORE orderStatus with "Preparing Food", cart
+
+    WHILE orderStatus equal to "Cooking" DO
+        IF orderStatus equal to "Cooking" THEN
+            STORE orderStatus with "Cooked"
+
+    STORE orderStatus with "Ongoing with driver"
+
+    WHILE orderStatus equal to "Ongoing with driver" DO
+        IF orderStatus equal to "Ongoing with driver" THEN
+            STORE orderStatus with "Delivered"
+
+    PRINT orderStatus
